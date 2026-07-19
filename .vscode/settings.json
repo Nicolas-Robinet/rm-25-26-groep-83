@@ -1,0 +1,31 @@
+{
+    // LaTeX Workshop: gebruik latexmk met XeLaTeX zodat Biber automatisch draait
+    // (xelatex -> biber -> xelatex x2). Zonder dit wordt de bibliografie leeg
+    // en zijn alle \textcite/\autocite-verwijzingen "undefined".
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk-xelatex",
+            "command": "latexmk",
+            "args": [
+                "-xelatex",
+                "-shell-escape",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "env": {}
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk (xelatex + biber)",
+            "tools": [
+                "latexmk-xelatex"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipe.default": "latexmk (xelatex + biber)",
+    // Ruim hulpbestanden op, maar behoud het .bbl niet nodig want latexmk regenereert
+    "latex-workshop.latex.autoBuild.run": "onSave"
+}

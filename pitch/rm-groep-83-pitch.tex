@@ -1,0 +1,418 @@
+% !TEX program = xelatex
+%==============================================================================
+% Research Methods - Group assignment - pitch
+% Groep 42 - 2025-2026
+%==============================================================================
+
+\documentclass[aspectratio=169]{beamer}
+
+% You can increase the font size a bit with the option `14pt'
+
+%==============================================================================
+% Preamble
+%==============================================================================
+
+%---------- Layout ------------------------------------------------------------
+
+\usetheme{hogent}
+
+% Choose the background color theme, hgwhite (white background) or hgblack
+% (black background)
+\usecolortheme{hgwhite}
+
+%---------- Packages ----------------------------------------------------------
+% You can add additional packages if you need them.
+
+\usepackage[dutch]{babel}      % Dutch language support
+\usepackage{booktabs}          % Better looking tables
+\usepackage{multirow,multicol} % Merge table cells
+\usepackage{eurosym}           % Euro symbool
+
+%---------- Metadata ----------------------------------------------------------
+
+\title{Pitch onderzoeksvoorstellen.}
+\subtitle{Research Methods, 25-26, groep 42}
+\author{Noah Geeroms \and Nicolas Robinet \and Tatjana Schouteeten}
+\date{\today}
+
+%==============================================================================
+% Presentation content
+%==============================================================================
+
+\begin{document}
+
+{
+    % HOGENT-huisstijl: afbeelding uitgesneden in de vorm van een letter.
+    \setbeamertemplate{background}[imgletter]
+        {blurred-background-cellphone-coffee-842554.jpg}{R}
+
+    \begin{frame}
+        \maketitle
+    \end{frame}
+}
+
+\begin{frame}
+    \frametitle{Inhoud.}
+
+    \tableofcontents
+\end{frame}
+
+%==============================================================================
+\section{Internetcensuur in België.}
+%==============================================================================
+
+\begin{frame}
+    \frametitle{Waarom dit onderwerp telt.}
+
+    \begin{columns}[t]
+        \column{.33\textwidth}
+        \textbf{Maatschappelijk}
+
+        \medskip
+        Vrije toegang tot informatie raakt aan grondrechten en de
+        werking van de democratie.
+
+        \column{.33\textwidth}
+        \textbf{Binnen de specialisatie}
+
+        \medskip
+        Netwerkblokkades, DNS-filtering en omzeiling vormen de kern van
+        System \& Network Engineering.
+
+        \column{.33\textwidth}
+        \textbf{Actueel}
+
+        \medskip
+        Censuur op het web groeit wereldwijd; ook in België worden
+        websites geblokkeerd zonder veel ruchtbaarheid.
+    \end{columns}
+\end{frame}
+
+\subsection{Probleemstelling.}
+
+\begin{frame}
+    \frametitle{Probleemstelling.}
+
+    Censuur op het internet is wereldwijd een groeiend thema.
+    \textbf{Ook in België worden websites geblokkeerd}, maar wie beslist
+    wat, en op welke basis?
+
+    \bigskip
+
+    Het kernprobleem is de \textbf{onduidelijkheid en beperkte
+    transparantie} rond de toepassing van internetcensuur in België.
+
+    \bigskip
+    \bigskip
+
+    \textcolor{hggrey}{\textbf{Onderbouwd door bronnen.}} TechPulse
+    (2015) toont aan dat de overheid meer websites blokkeert dan ze
+    toegeeft.
+\end{frame}
+
+\subsection{Onderzoeksvragen.}
+
+\begin{frame}
+    \frametitle{Hoofdonderzoeksvraag.}
+
+    \begin{quote}
+        {\large In welke mate beïnvloedt de Belgische overheid het online
+        gedrag van burgers door het al dan niet toepassen van
+        internetcensuur?}
+    \end{quote}
+
+    \bigskip
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Deelvragen.}
+
+    \begin{columns}[t]
+        \column{.5\textwidth}
+        \textbf{Probleemdomein}
+        \begin{itemize}
+            \item Welke vormen van internetcensuur worden momenteel in
+                  België toegepast?
+            \item Welke instanties beoordelen welke online content
+                  gecensureerd moet worden?
+            \item Welk online gedrag wordt aantoonbaar beïnvloed door
+                  overheidsinterventie?
+        \end{itemize}
+
+        \column{.5\textwidth}
+        \textbf{Oplossingsdomein}
+        \begin{itemize}
+            \item Welke technische middelen (VPN, Tor) gebruiken burgers
+                  om censuur te omzeilen en hoe effectief zijn die?
+        \end{itemize}
+    \end{columns}
+\end{frame}
+
+\subsection{Methodologie.}
+
+\begin{frame}
+    \frametitle{Methodologie: probleemdomein.}
+
+    \footnotesize
+    \begin{table}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{@{}lp{2.7cm}p{4cm}p{3.3cm}@{}}
+            \toprule
+            & \textbf{Methode} & \textbf{Databronnen / input} &
+            \textbf{Output} \\
+            \midrule
+            \textbf{DV1} & Literatuurstudie &
+            Wetteksten, BIPT-rapporten, digitale waakhonden &
+            Overzicht vormen van censuur \\
+            \midrule
+            \textbf{DV2} & Documenten\-analyse &
+            FOD Economie, FOD Justitie, BIPT, Kansspelcommissie &
+            Lijst actoren en bevoegdheden \\
+            \midrule
+            \textbf{DV3} & Enquête + secundaire data &
+            Steekproef internet\-gebruikers, VPN-statistieken &
+            Statistiek over gedrag \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Methodologie: oplossingsdomein.}
+
+    \footnotesize
+    \begin{table}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{@{}lp{2.7cm}p{4cm}p{3.3cm}@{}}
+            \toprule
+            & \textbf{Methode} & \textbf{Databronnen / input} &
+            \textbf{Output} \\
+            \midrule
+            \textbf{DV4} & Proof of Concept + literatuurstudie &
+            Testomgeving (VM's in België), VPN/Tor-documentatie, lijsten
+            geblokkeerde domeinen &
+            Meetresultaten: succesratio, responstijd, latency \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \bigskip
+
+    \textcolor{hggrey}{\textbf{Eigen technische bijdrage.}} We meten
+    verbindingspogingen naar geblokkeerde domeinen, met en zonder
+    omzeilingstechnieken, en vergelijken effectiviteit én
+    gebruiksvriendelijkheid.
+\end{frame}
+
+%==============================================================================
+\section{Online veiligheid van kinderen in digitale games.}
+%==============================================================================
+
+\begin{frame}
+    \frametitle{Waarom dit onderwerp telt.}
+
+    \begin{columns}[t]
+        \column{.33\textwidth}
+        \textbf{Maatschappelijk}
+
+        \medskip
+        Kinderen gamen steeds vroeger; hun veiligheid online is een brede
+        zorg voor ouders, scholen en beleid.
+
+        \column{.33\textwidth}
+        \textbf{Interprofessioneel}
+
+        \medskip
+        Het thema verbindt technologie, onderwijs, recht en welzijn rond
+        één kwetsbare doelgroep.
+
+        \column{.33\textwidth}
+        \textbf{Actueel}
+
+        \medskip
+        Loot boxes, grooming en cyberpesten halen geregeld het nieuws;
+        regelgeving holt de praktijk achterna.
+    \end{columns}
+\end{frame}
+
+\subsection{Probleemstelling.}
+
+\begin{frame}
+    \frametitle{Probleemstelling.}
+
+    Kinderen en jongeren gamen steeds vroeger en intensiever.
+    \textbf{Toch blijven ze blootgesteld aan online risico's}: grooming,
+    cyberpesten, gewelddadige inhoud en loot boxes.
+
+    \bigskip
+
+    Ondanks classificatiesystemen en ouderlijke controles is er een
+    \textbf{beperkt en onduidelijk toegepast aanbod aan
+    veiligheidsmaatregelen} voor minderjarigen.
+
+    \bigskip
+    \bigskip
+
+    \textcolor{hggrey}{\textbf{Onderbouwd door bronnen.}} Bloomberg
+    (Carville \& Chen, 2024) en UNICEF (2024) documenteren de risico's
+    voor kinderen online.
+\end{frame}
+
+\subsection{Onderzoeksvragen.}
+
+\begin{frame}
+    \frametitle{Hoofdonderzoeksvraag.}
+
+    \begin{quote}
+        {\large In welke mate worden kinderen en jongeren in België
+        beschermd tegen online risico's binnen digitale games?}
+    \end{quote}
+
+    \bigskip
+
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{Deelvragen.}
+
+    \begin{columns}[t]
+        \column{.5\textwidth}
+        \textbf{Probleemdomein}
+        \begin{itemize}
+            \item Welke online risico's (loot boxes, grooming,
+                  cyberpesten, gewelddadige inhoud) komen voor in games
+                  die minderjarigen spelen?
+            \item Hoe effectief zijn bestaande classificatiesystemen
+                  zoals PEGI in het beschermen van minderjarigen?
+        \end{itemize}
+
+        \column{.5\textwidth}
+        \textbf{Oplossingsdomein}
+        \begin{itemize}
+            \item Welke technische veiligheidsmaatregelen (ouderlijk
+                  toezicht, chatfilters, meldknoppen) bieden
+                  gameontwikkelaars aan en hoe toegankelijk zijn die?
+        \end{itemize}
+    \end{columns}
+\end{frame}
+
+\subsection{Methodologie.}
+
+\begin{frame}
+    \frametitle{Methodologie: probleemdomein.}
+
+    \footnotesize
+    \begin{table}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{@{}lp{2.7cm}p{4cm}p{3.3cm}@{}}
+            \toprule
+            & \textbf{Methode} & \textbf{Databronnen / input} &
+            \textbf{Output} \\
+            \midrule
+            \textbf{DV1} & Literatuurstudie + enquête &
+            Wetenschappelijke artikels, Child Focus, Mediawijs; enquêtes
+            bij jongeren en ouders &
+            Overzicht van meest voorkomende risico's \\
+            \midrule
+            \textbf{DV2} & Vergelijkende analyse &
+            PEGI-documentatie, beleidsdocumenten, studies, reviews &
+            Evaluatie effectiviteit PEGI \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Methodologie: oplossingsdomein.}
+
+    \footnotesize
+    \begin{table}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{@{}lp{2.7cm}p{4cm}p{3.3cm}@{}}
+            \toprule
+            & \textbf{Methode} & \textbf{Databronnen / input} &
+            \textbf{Output} \\
+            \midrule
+            \textbf{DV3} & Praktische \& vergelijkende analyse &
+            Populaire games, documentatie van platformen, observatie van
+            ingebouwde opties &
+            Vergelijking en beoordeling van toegankelijkheid \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \bigskip
+
+    \textcolor{hggrey}{\textbf{Eigen praktische bijdrage.}} We testen
+    functies zoals ouderlijk toezicht, chatfilters, rapporteringssystemen
+    en privacy-instellingen in populaire games en beoordelen hun
+    toegankelijkheid voor ouders en jongeren.
+\end{frame}
+
+%==============================================================================
+\section{Bronnen.}
+%==============================================================================
+
+\begin{frame}
+    \frametitle{Bronnen: internetcensuur (APA).}
+
+    \small
+    \begin{itemize}
+        \item Ombelet, P.-J., Lievens, E., Stevens, D., \& Valcke, P.
+              (2015). \textit{Vrijheid van meningsuiting}. Vanden Broele.
+        \item Royer, S. (2019, 19 april). \textit{Improviseren met
+              blokkeren: De blokkering van websites in de Belgische
+              strafprocedure}. Leuven Blog for Public Law.
+              \url{https://www.leuvenpubliclaw.com}
+        \item TechPulse. (2015, 29 april). \textit{Belgische overheid
+              blokkeert meer websites dan ze toegeeft}.
+              \url{https://techpulse.be}
+    \end{itemize}
+
+    \medskip
+    \textcolor{hggrey}{\footnotesize Diverse brontypes: boek, academisch
+    blogartikel en journalistiek onderzoek.}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Bronnen: online veiligheid (APA).}
+
+    \small
+    \begin{itemize}
+        \item Carville, O., \& Chen, C. D. (2024). Roblox's predator
+              problem. \textit{Bloomberg Businessweek}, 4822, 58-67.
+        \item Digital Watch Observatory. (2024). \textit{Child safety
+              online}. \url{https://dig.watch/topics/child-safety-online}
+        \item European Commission. (2024). \textit{A European strategy
+              for a Better Internet for Kids (BIK+)}.
+              \url{https://digital-strategy.ec.europa.eu}
+        \item Safe Online. (2024). \textit{Safe Online report 2024}.
+              \url{https://safeonline.global}
+        \item Safer.io. (2025). \textit{2025 online child safety
+              predictions for trust and safety}. \url{https://safer.io}
+        \item UNICEF. (2024). \textit{Keeping children safe online}.
+              \url{https://www.unicef.org}
+    \end{itemize}
+\end{frame}
+
+%==============================================================================
+
+{
+\setbeamertemplate{background}[imgletter]
+    {blurred-background-cellphone-coffee-842554.jpg}{B}
+
+\begin{frame}
+
+    {\huge \textbf{Bedankt. Vragen?}}
+
+    \bigskip
+
+    \textbf{Groep 83} \\
+    Noah Geeroms, Nicolas Robinet, Tatjana Schouteeten
+
+\end{frame}
+}
+
+\end{document}
