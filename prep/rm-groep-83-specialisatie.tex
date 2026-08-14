@@ -1,17 +1,16 @@
 %==============================================================================
-% Research Methods - Groepsopdracht - onderzoeksvoorstel specialisatie
+% Paper Research Methods: onderzoeksvoorstel specialisatie
 %==============================================================================
+
 \documentclass{hogent-article}
 
 \usepackage{tikz}
 \usetikzlibrary{positioning,arrows.meta}
 
-% Include bibliography file
 \addbibresource{references.bib}
 
-% Info about the assignment, course and study programme
 \studyprogramme{Professionele bachelor toegepaste informatica}
-\course{Research Methods, 2C2}
+\course{Research Methods, 2A2}
 \assignmenttype{Groepsopdracht}
 \academicyear{2025-2026}
 \title{Onderzoeksvoorstel: een geschikte webfilteroplossing voor het netwerk van College Ten Doorn}
@@ -36,13 +35,11 @@
 \tableofcontents
 
 \section{Probleemstelling}
-% TODO: details van de casus (huidige infrastructuur, aantal leerlingen, contactpersoon
-% IT-dienst) verifiëren bij College Ten Doorn en hier concretiseren.
 College Ten Doorn is een grote katholieke scholencampus in Eeklo die onder meer secundair onderwijs aanbiedt aan enkele duizenden leerlingen. Leerlingen gebruiken het schoolnetwerk dagelijks met eigen of door de school beheerde laptops. De school heeft daarbij een zorgplicht: ze wil vermijden dat minderjarigen via haar infrastructuur toegang krijgen tot schadelijke of leeftijdsongeschikte content (bv. pornografie, gokwebsites, extremistische inhoud), en ze moet dit beleid ook technisch kunnen afdwingen.
 
 Het kernprobleem is dat de huidige, beperkte filtering op het schoolnetwerk niet sluitend is en niet centraal geëvalueerd wordt. Klassieke filtering op basis van DNS is bovendien structureel onder druk komen te staan: versleutelde DNS-protocollen zoals DNS-over-HTTPS laten toe om DNS-verkeer buiten de filterende resolver om te sturen, waardoor netwerkfilters onzichtbaar gepasseerd worden \autocite{Hoffman2018}. Grootschalig meetonderzoek toont bovendien aan dat DNS-manipulatie als filtertechniek gekende beperkingen en omzeilingsroutes heeft \autocite{Pearce2017}. Ook in de Belgische context is bekend dat websiteblokkades op DNS-niveau eenvoudig te omzeilen zijn en juridisch zorgvuldig onderbouwd moeten worden \autocite{Royer2019}. Een school die filtert, moet daarnaast rekening houden met het spanningsveld met de vrijheid van meningsuiting en informatievergaring, wat een doordachte en proportionele technische keuze des te belangrijker maakt \autocite{Ombelet2015}.
 
-Er bestaat een ruim aanbod aan filteroplossingen -- van open source (bv. Pi-hole, pfSense) tot commerciële clouddiensten (bv. Cisco Umbrella) -- maar er is geen pasklaar antwoord op de vraag welke oplossing voor déze school, met haar specifieke infrastructuur, budget en beheerscapaciteit, de beste keuze is. Dat is een typisch toegepast onderzoeksprobleem: de beste oplossing hangt af van de specifieke situatie en moet objectief, met meetbare criteria, bepaald worden.
+Er bestaat een ruim aanbod aan filteroplossingen van open source (bv. Pi-hole, pfSense) tot commerciële clouddiensten (bv. Cisco Umbrella), maar er is geen pasklaar antwoord op de vraag welke oplossing voor déze school, met haar specifieke infrastructuur, budget en beheerscapaciteit, de beste keuze is. Dat is een typisch toegepast onderzoeksprobleem: de beste oplossing hangt af van de specifieke situatie en moet objectief, met meetbare criteria, bepaald worden.
 
 \subsection{Doelgroep en relevantie}
 De primaire doelgroep zijn de netwerkbeheerders van College Ten Doorn. De resultaten zijn daarnaast relevant voor IT-verantwoordelijken van andere onderwijsinstellingen en kmo's die contentfiltering willen invoeren of herevalueren. Meetplatformen zoals het Open Observatory of Network Interference tonen dat de effectiviteit van netwerkfilters wereldwijd een actueel onderzoeksthema is \autocite{OONI2026}.
@@ -103,11 +100,11 @@ Het onderzoek volgt het stramien van een vergelijkende studie en is opgedeeld in
         \toprule
         \textbf{Fase} & \textbf{Onderzoekstechniek} & \textbf{Artefact} & \textbf{Timing} \\
         \midrule
-        1. Casusanalyse (DV1) & Semigestructureerd interview met de IT-dienst; documentenanalyse netwerkplan & Beschrijving huidige infrastructuur en filterbeleid, pijnpunten & wk 1--2 \\
-        2. Requirements (DV2) & Interviews met belanghebbenden (IT-dienst, directie); MoSCoW-prioritering & Geprioriteerde lijst functionele en niet-functionele requirements & wk 3--4 \\
-        3. Long list (DV3, DV4) & Literatuurstudie technische documentatie; niets a priori uitsluiten & Lijst kandidaat-oplossingen met bronvermelding & wk 5--6 \\
-        4. Short list (DV4) & Samenvattende tabel requirements $\times$ alternatieven & Gemotiveerde selectie van 2--3 alternatieven & wk 7 \\
-        5. Proof of concept (DV5, DV6) & Experiment in gevirtualiseerde testopstelling (VM's die het schoolnetwerk nabootsen); geautomatiseerde metingen, resultaten in CSV; scripts en configuratie in de GitHub-repository & Reproduceerbare testopstelling; meetresultaten (blokkeringsratio, vals-positieven, latency, doorvoer, omzeilbaarheid) & wk 8--11 \\
+        1. Casusanalyse (DV1) & Semigestructureerd interview met de IT-dienst, documentenanalyse netwerkplan & Beschrijving huidige infrastructuur en filterbeleid, pijnpunten & wk 1-2 \\
+        2. Requirements (DV2) & Interviews met belanghebbenden (IT-dienst, directie), MoSCoW-prioritering & Geprioriteerde lijst functionele en niet-functionele requirements & wk 3-4 \\
+        3. Long list (DV3, DV4) & Literatuurstudie technische documentatie, niets a priori uitsluiten & Lijst kandidaat-oplossingen met bronvermelding & wk 5-6 \\
+        4. Short list (DV4) & Samenvattende tabel requirements $\times$ alternatieven & Gemotiveerde selectie van 2-3 alternatieven & wk 7 \\
+        5. Proof of concept (DV5, DV6) & Experiment in gevirtualiseerde testopstelling (VM's die het schoolnetwerk nabootsen), geautomatiseerde metingen, resultaten in CSV, scripts en configuratie in de GitHub-repository & Reproduceerbare testopstelling, meetresultaten (blokkeringsratio, vals-positieven, latency, doorvoer, omzeilbaarheid) & wk 8-11 \\
         6. Conclusie & Analyse en visualisatie meetdata (Python) & Onderbouwde aanbeveling voor College Ten Doorn en resterende hiaten & wk 12 \\
         \bottomrule
     \end{tabular}
