@@ -16,8 +16,6 @@
 \academicyear{2025-2026}
 \title{Onderzoeksvoorstel: netwerkgebaseerd digitaal toezicht in een jeugdpsychiatrische zorginstelling}
 
-\author{Sammy Karknawi} \email{sammy.karknawi@student.hogent.be}
-\author{Lander Dhaen} \email{lander.dhaen@student.hogent.be}
 \author{Nicolas Robinet} \email{nicolas.robinet@student.hogent.be}
 \author{Tatjana Schouteeten} \email{tatjana.schouteeten@student.hogent.be}
 
@@ -76,14 +74,16 @@ Het onderzoek volgt het stramien van een vergelijkende studie en is opgedeeld in
     \centering
     \begin{tikzpicture}[
         node distance=6mm,
-        fase/.style={draw, rounded corners, align=center, minimum height=9mm, font=\small}
+        fase/.style={draw, rounded corners, align=center, text width=3.4cm, font=\small, inner sep=2mm}
     ]
-        \node[fase] (f1) {Casus- \&\\risicoanalyse};
-        \node[fase, right=of f1] (f2) {Require-\\ments};
-        \node[fase, right=of f2] (f3) {Long\\list};
-        \node[fase, right=of f3] (f4) {Short\\list};
-        \node[fase, right=of f4] (f5) {Proof of\\concept};
-        \node[fase, right=of f5] (f6) {Conclusie \&\\aanbeveling};
+        \node[fase] (f1) {\textbf{1. Casus- \& risicoanalyse}\\Interview IT \& zorgcoördinatie};
+        \node[fase, right=of f1] (f2) {\textbf{2. Requirements}\\MoSCoW-prioritering};
+        \node[fase, right=of f2] (f3) {\textbf{3. Long list}\\Literatuurstudie kandidaat-oplossingen};
+
+        \node[fase, below=of f3] (f4) {\textbf{4. Short list}\\Requirements $\times$ alternatieven};
+        \node[fase, below=of f2] (f5) {\textbf{5. Proof of concept}\\Metingen in testopstelling};
+        \node[fase, below=of f1] (f6) {\textbf{6. Conclusie \& aanbeveling}\\Analyse \& visualisatie};
+
         \draw[-{Latex}] (f1) -- (f2);
         \draw[-{Latex}] (f2) -- (f3);
         \draw[-{Latex}] (f3) -- (f4);
