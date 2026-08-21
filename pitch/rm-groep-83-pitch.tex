@@ -31,8 +31,8 @@
 %---------- Metadata ----------------------------------------------------------
 
 \title{Pitch onderzoeksvoorstellen.}
-\subtitle{Research Methods, 25-26, groep 42}
-\author{Lander Dhaen \and Sammy Karknawi \and Nicolas Robinet \and Tatjana Schouteeten}
+\subtitle{Research Methods, 25-26, groep 83}
+\author{Nicolas Robinet \and Tatjana Schouteeten}
 \date{\today}
 
 %==============================================================================
@@ -58,7 +58,7 @@
 \end{frame}
 
 %==============================================================================
-\section{Internetcensuur in België.}
+\section{Webfiltering op het schoolnetwerk.}
 %==============================================================================
 
 \begin{frame}
@@ -69,22 +69,22 @@
         \textbf{Maatschappelijk}
 
         \medskip
-        Vrije toegang tot informatie raakt aan grondrechten en de
-        werking van de democratie.
+        Een school heeft een zorgplicht om minderjarigen op haar netwerk
+        tegen schadelijke en leeftijdsongeschikte content te beschermen.
 
         \column{.33\textwidth}
         \textbf{Binnen de specialisatie}
 
         \medskip
-        Netwerkblokkades, DNS-filtering en omzeiling vormen de kern van
-        System \& Network Engineering.
+        DNS-filtering, firewall-categorisatie, TLS-inspectie en
+        netwerkbeheer vormen de kern van System \& Network Engineering.
 
         \column{.33\textwidth}
         \textbf{Actueel}
 
         \medskip
-        Censuur op het web groeit wereldwijd; ook in België worden
-        websites geblokkeerd zonder veel ruchtbaarheid.
+        Versleutelde DNS-protocollen maken klassieke DNS-filtering steeds
+        eenvoudiger omzeilbaar.
     \end{columns}
 \end{frame}
 
@@ -93,21 +93,21 @@
 \begin{frame}
     \frametitle{Probleemstelling.}
 
-    Censuur op het internet is wereldwijd een groeiend thema.
-    \textbf{Ook in België worden websites geblokkeerd}, maar wie beslist
-    wat, en op welke basis?
+    College Ten Doorn wil contentfiltering op haar schoolnetwerk
+    \textbf{sluitend afdwingen} voor haar minderjarige leerlingen.
 
     \bigskip
 
-    Het kernprobleem is de \textbf{onduidelijkheid en beperkte
-    transparantie} rond de toepassing van internetcensuur in België.
+    De huidige, beperkte filtering is niet centraal geëvalueerd.
+    Klassieke DNS-filtering kan bovendien worden omzeild via
+    DNS-over-HTTPS, alternatieve resolvers en VPN-verbindingen.
 
     \bigskip
     \bigskip
 
-    \textcolor{hggrey}{\textbf{Onderbouwd door bronnen.}} TechPulse
-    (2015) toont aan dat de overheid meer websites blokkeert dan ze
-    toegeeft.
+    \textcolor{hggrey}{\textbf{Onderbouwd door bronnen.}} Hoffman \&
+    McManus (2018) en Pearce et al.\ (2017) beschrijven de beperkingen en
+    omzeilingsroutes van DNS-filtering.
 \end{frame}
 
 \subsection{Onderzoeksvragen.}
@@ -116,9 +116,10 @@
     \frametitle{Hoofdonderzoeksvraag.}
 
     \begin{quote}
-        {\large In welke mate beïnvloedt de Belgische overheid het online
-        gedrag van burgers door het al dan niet toepassen van
-        internetcensuur?}
+        {\large Welke webfilteroplossing is het meest geschikt om het
+        contentfilterbeleid van College Ten Doorn op haar schoolnetwerk af
+        te dwingen, rekening houdend met haar infrastructuur, budget en
+        beheerscapaciteit?}
     \end{quote}
 
     \bigskip
@@ -132,19 +133,23 @@
         \column{.5\textwidth}
         \textbf{Probleemdomein}
         \begin{itemize}
-            \item Welke vormen van internetcensuur worden momenteel in
-                  België toegepast?
-            \item Welke instanties beoordelen welke online content
-                  gecensureerd moet worden?
-            \item Welk online gedrag wordt aantoonbaar beïnvloed door
-                  overheidsinterventie?
+            \item Hoe zien de huidige netwerkinfrastructuur en het
+                  filterbeleid eruit, en waar schieten die tekort?
+            \item Aan welke functionele en niet-functionele requirements
+                  moet een oplossing voldoen?
+            \item Welke webfiltertechnieken bestaan er en wat zijn hun
+                  beperkingen en omzeilingsmogelijkheden?
         \end{itemize}
 
         \column{.5\textwidth}
         \textbf{Oplossingsdomein}
         \begin{itemize}
-            \item Welke technische middelen (VPN, Tor) gebruiken burgers
-                  om censuur te omzeilen en hoe effectief zijn die?
+            \item Welke oplossingen komen op de longlist en welke voldoen
+                  het best aan de requirements (shortlist)?
+            \item Hoe presteert de beste oplossing op blokkeringsratio,
+                  vals-positieven, latency en doorvoer?
+            \item In welke mate weerstaat ze DNS-over-HTTPS, alternatieve
+                  DNS-servers en VPN-verbindingen?
         \end{itemize}
     \end{columns}
 \end{frame}
@@ -162,17 +167,18 @@
             & \textbf{Methode} & \textbf{Databronnen / input} &
             \textbf{Output} \\
             \midrule
-            \textbf{DV1} & Literatuurstudie &
-            Wetteksten, BIPT-rapporten, digitale waakhonden &
-            Overzicht vormen van censuur \\
+            \textbf{DV1} & Casusanalyse &
+            Interview IT-dienst en analyse van het netwerkplan &
+            Infrastructuur, filterbeleid en pijnpunten \\
             \midrule
-            \textbf{DV2} & Documenten\-analyse &
-            FOD Economie, FOD Justitie, BIPT, Kansspelcommissie &
-            Lijst actoren en bevoegdheden \\
+            \textbf{DV2} & Interviews + MoSCoW &
+            IT-dienst en directie &
+            Geprioriteerde functionele en niet-functionele requirements \\
             \midrule
-            \textbf{DV3} & Enquête + secundaire data &
-            Steekproef internet\-gebruikers, VPN-statistieken &
-            Statistiek over gedrag \\
+            \textbf{DV3} & Literatuurstudie &
+            Documentatie over DNS-filtering, proxy-/TLS-inspectie en
+            firewall-categorisatie &
+            Technieken, beperkingen en omzeilingsroutes \\
             \bottomrule
         \end{tabular}
     \end{table}
@@ -189,24 +195,29 @@
             & \textbf{Methode} & \textbf{Databronnen / input} &
             \textbf{Output} \\
             \midrule
-            \textbf{DV4} & Proof of Concept + literatuurstudie &
-            Testomgeving (VM's in België), VPN/Tor-documentatie, lijsten
-            geblokkeerde domeinen &
-            Meetresultaten: succesratio, responstijd, latency \\
+            \textbf{DV4} & Vergelijking &
+            Kandidaat-oplossingen &
+            Longlist en shortlist \\
+            \midrule
+            \textbf{DV5} & Proof of concept &
+            VM-testomgeving en testcorpus &
+            Blokkering, vals-positieven, latency en doorvoer \\
+            \midrule
+            \textbf{DV6} & Omzeilingstest &
+            DNS-over-HTTPS, alternatieve DNS en VPN &
+            Geslaagde bypasses \\
             \bottomrule
         \end{tabular}
     \end{table}
 
     \bigskip
 
-    \textcolor{hggrey}{\textbf{Eigen technische bijdrage.}} We meten
-    verbindingspogingen naar geblokkeerde domeinen, met en zonder
-    omzeilingstechnieken, en vergelijken effectiviteit én
-    gebruiksvriendelijkheid.
+    \textcolor{hggrey}{\textbf{Eigen technische bijdrage.}}
+    Reproduceerbare testopstelling; data en scripts.
 \end{frame}
 
 %==============================================================================
-\section{Online veiligheid van kinderen in digitale games.}
+\section{Digitaal toezicht in de jeugdzorg.}
 %==============================================================================
 
 \begin{frame}
@@ -217,22 +228,22 @@
         \textbf{Maatschappelijk}
 
         \medskip
-        Kinderen gamen steeds vroeger; hun veiligheid online is een brede
-        zorg voor ouders, scholen en beleid.
+        Minderjarige bewoners van een zorginstelling hebben een
+        beschermend kader nodig voor internettoegang en gamen.
 
         \column{.33\textwidth}
         \textbf{Interprofessioneel}
 
         \medskip
-        Het thema verbindt technologie, onderwijs, recht en welzijn rond
-        één kwetsbare doelgroep.
+        Het thema verbindt netwerkbeheer met zorgcoördinatie,
+        pedagogisch beleid en het welzijn van een kwetsbare doelgroep.
 
         \column{.33\textwidth}
         \textbf{Actueel}
 
         \medskip
-        Loot boxes, grooming en cyberpesten halen geregeld het nieuws;
-        regelgeving holt de praktijk achterna.
+        Grooming, cyberpesten, schadelijke content en gokmechanismen in
+        games blijven reële online risico's.
     \end{columns}
 \end{frame}
 
@@ -241,22 +252,23 @@
 \begin{frame}
     \frametitle{Probleemstelling.}
 
-    Kinderen en jongeren gamen steeds vroeger en intensiever.
-    \textbf{Toch blijven ze blootgesteld aan online risico's}: grooming,
-    cyberpesten, gewelddadige inhoud en loot boxes.
+    Zorginstelling Y is een jeugdpsychiatrische voorziening in
+    Oost-Vlaanderen. Zij moet afspraken over schermtijd, leeftijdsgeschikte
+    content en veilige communicatie \textbf{centraal op het netwerk
+    afdwingen}.
 
     \bigskip
 
-    Ondanks classificatiesystemen en ouderlijke controles is er een
-    \textbf{beperkt en onduidelijk toegepast aanbod aan
-    veiligheidsmaatregelen} voor minderjarigen.
+    PEGI-classificaties informeren, maar dwingen niets af. Ingebouwde
+    parental controls werken per toestel en platform en zijn voor een
+    instelling met wisselende toestellen onbeheersbaar.
 
     \bigskip
     \bigskip
 
-    \textcolor{hggrey}{\textbf{Onderbouwd door bronnen.}} Bloomberg
-    (Carville \& Chen, 2024) en UNICEF (2024) documenteren de risico's
-    voor kinderen online.
+    \textcolor{hggrey}{\textbf{Onderbouwd door bronnen.}} Smahel et al.\
+    (2020), Mediawijs (2024), Carville \& Chen (2024) en UNICEF (2024)
+    documenteren de online risico's voor minderjarigen.
 \end{frame}
 
 \subsection{Onderzoeksvragen.}
@@ -265,8 +277,9 @@
     \frametitle{Hoofdonderzoeksvraag.}
 
     \begin{quote}
-        {\large In welke mate worden kinderen en jongeren in België
-        beschermd tegen online risico's binnen digitale games?}
+        {\large Welke netwerkgebaseerde oplossing voor digitaal toezicht
+        is het meest geschikt om het internet- en gamebeleid van
+        zorginstelling Y voor haar minderjarige bewoners af te dwingen?}
     \end{quote}
 
     \bigskip
@@ -281,19 +294,23 @@
         \column{.5\textwidth}
         \textbf{Probleemdomein}
         \begin{itemize}
-            \item Welke online risico's (loot boxes, grooming,
-                  cyberpesten, gewelddadige inhoud) komen voor in games
-                  die minderjarigen spelen?
-            \item Hoe effectief zijn bestaande classificatiesystemen
-                  zoals PEGI in het beschermen van minderjarigen?
+            \item Welke online risico's binnen games en platformen zijn
+                  het meest relevant voor de bewoners?
+            \item Welk internet- en gamebeleid wil de instelling
+                  afdwingen, en welke requirements volgen daaruit?
+            \item Waarom volstaan PEGI en ingebouwde parental controls
+                  niet op het niveau van een instelling?
         \end{itemize}
 
         \column{.5\textwidth}
         \textbf{Oplossingsdomein}
         \begin{itemize}
-            \item Welke technische veiligheidsmaatregelen (ouderlijk
-                  toezicht, chatfilters, meldknoppen) bieden
-                  gameontwikkelaars aan en hoe toegankelijk zijn die?
+            \item Welke toezichtoplossingen komen in aanmerking en welke
+                  voldoen het best aan de requirements?
+            \item Hoe accuraat identificeert en reguleert de beste
+                  oplossing game- en chatverkeer en tijdschema's?
+            \item Welke impact heeft de oplossing op toegelaten verkeer,
+                  en in welke mate weerstaat ze versleutelde DNS of VPN?
         \end{itemize}
     \end{columns}
 \end{frame}
@@ -311,14 +328,18 @@
             & \textbf{Methode} & \textbf{Databronnen / input} &
             \textbf{Output} \\
             \midrule
-            \textbf{DV1} & Literatuurstudie + enquête &
-            Wetenschappelijke artikels, Child Focus, Mediawijs; enquêtes
-            bij jongeren en ouders &
-            Overzicht van meest voorkomende risico's \\
+            \textbf{DV1} & Casus- en risicoanalyse &
+            Literatuurstudie; interview met IT-verantwoordelijke en
+            zorgcoördinatie &
+            Risicoprofiel van bewonersgroep en huidige netwerkopzet \\
             \midrule
-            \textbf{DV2} & Vergelijkende analyse &
-            PEGI-documentatie, beleidsdocumenten, studies, reviews &
-            Evaluatie effectiviteit PEGI \\
+            \textbf{DV2} & Interviews + MoSCoW &
+            IT-verantwoordelijke en zorgcoördinatie &
+            Geprioriteerde functionele en niet-functionele requirements \\
+            \midrule
+            \textbf{DV3} & Literatuurstudie &
+            PEGI en ingebouwde parental controls &
+            Lokale controls tekort \\
             \bottomrule
         \end{tabular}
     \end{table}
@@ -335,20 +356,25 @@
             & \textbf{Methode} & \textbf{Databronnen / input} &
             \textbf{Output} \\
             \midrule
-            \textbf{DV3} & Praktische \& vergelijkende analyse &
-            Populaire games, documentatie van platformen, observatie van
-            ingebouwde opties &
-            Vergelijking en beoordeling van toegankelijkheid \\
+            \textbf{DV4} & Vergelijking &
+            Kandidaat-oplossingen &
+            Longlist en shortlist \\
+            \midrule
+            \textbf{DV5} & Proof of concept &
+            Games, chatplatformen en schooltoepassingen &
+            Herkenning, vals-positieven en tijdschema's \\
+            \midrule
+            \textbf{DV6} & Prestatie- en omzeilingstest &
+            Toegelaten verkeer, DNS-over-HTTPS en VPN &
+            Latency, doorvoer en bypasses \\
             \bottomrule
         \end{tabular}
     \end{table}
 
     \bigskip
 
-    \textcolor{hggrey}{\textbf{Eigen praktische bijdrage.}} We testen
-    functies zoals ouderlijk toezicht, chatfilters, rapporteringssystemen
-    en privacy-instellingen in populaire games en beoordelen hun
-    toegankelijkheid voor ouders en jongeren.
+    \textcolor{hggrey}{\textbf{Eigen technische bijdrage.}}
+    Test van verkeer, tijdschema's en omzeiling.
 \end{frame}
 
 %==============================================================================
@@ -356,44 +382,43 @@
 %==============================================================================
 
 \begin{frame}
-    \frametitle{Bronnen: internetcensuur (APA).}
+    \frametitle{Bronnen: webfiltering (APA).}
 
     \small
     \begin{itemize}
-        \item Ombelet, P.-J., Lievens, E., Stevens, D., \& Valcke, P.
-              (2015). \textit{Vrijheid van meningsuiting}. Vanden Broele.
-        \item Royer, S. (2019, 19 april). \textit{Improviseren met
-              blokkeren: De blokkering van websites in de Belgische
-              strafprocedure}. Leuven Blog for Public Law.
-              \url{https://www.leuvenpubliclaw.com}
-        \item TechPulse. (2015, 29 april). \textit{Belgische overheid
-              blokkeert meer websites dan ze toegeeft}.
-              \url{https://techpulse.be}
+        \item Hoffman, P., \& McManus, P. (2018). \textit{DNS Queries
+              over HTTPS (DoH)} (RFC 8484). IETF.
+        \item Pearce, P., et al.\ (2017). \textit{Global Measurement of
+              DNS Manipulation}. USENIX Security Symposium.
+        \item Pi-hole. (2026). \textit{Pi-hole documentation}.
+              \url{https://docs.pi-hole.net}
+        \item Netgate. (2026). \textit{pfSense Documentation}.
+              \url{https://docs.netgate.com/pfsense}
+        \item Cisco. (2026). \textit{Cisco Umbrella documentation}.
+              \url{https://docs.umbrella.com}
     \end{itemize}
 
     \medskip
-    \textcolor{hggrey}{\footnotesize Diverse brontypes: boek, academisch
-    blogartikel en journalistiek onderzoek.}
+    \textcolor{hggrey}{\footnotesize Bronnen voor de technische
+    vergelijking, de omzeilingsscenario's en kandidaat-oplossingen.}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Bronnen: online veiligheid (APA).}
+    \frametitle{Bronnen: digitaal toezicht (APA).}
 
     \small
     \begin{itemize}
-        \item Carville, O., \& Chen, C. D. (2024). Roblox's predator
-              problem. \textit{Bloomberg Businessweek}, 4822, 58-67.
-        \item Digital Watch Observatory. (2024). \textit{Child safety
-              online}. \url{https://dig.watch/topics/child-safety-online}
-        \item European Commission. (2024). \textit{A European strategy
-              for a Better Internet for Kids (BIK+)}.
-              \url{https://digital-strategy.ec.europa.eu}
-        \item Safe Online. (2024). \textit{Safe Online report 2024}.
-              \url{https://safeonline.global}
-        \item Safer.io. (2025). \textit{2025 online child safety
-              predictions for trust and safety}. \url{https://safer.io}
-        \item UNICEF. (2024). \textit{Keeping children safe online}.
-              \url{https://www.unicef.org}
+        \item Smahel, D., et al.\ (2020). \textit{EU Kids Online 2020:
+              Survey results from 19 countries}. EU Kids Online.
+        \item Mediawijs \& imec. (2024). \textit{Apestaartjaren}.
+              \url{https://www.apestaartjaren.be}
+        \item Carville, O., \& Chen, C. D. (2024). \textit{Roblox's
+              Predator Problem}. Bloomberg Businessweek, 4822, 58--67.
+        \item Zendle, D., \& Cairns, P. (2018). \textit{Video game loot
+              boxes are linked to problem gambling}. PLOS ONE.
+        \item UNICEF. (2024). \textit{Keeping children safe online};
+              European Commission. (2022). \textit{A better internet for
+              kids (BIK+)}.
     \end{itemize}
 \end{frame}
 
@@ -410,7 +435,7 @@
     \bigskip
 
     \textbf{Groep 83} \\
-    Lander Dhaen, Sammy Karknawi, Nicolas Robinet, Tatjana Schouteeten
+    Nicolas Robinet, Tatjana Schouteeten
 
 \end{frame}
 }
