@@ -2,8 +2,6 @@
 
 | Name     | First Name | Class group | Github user name                        |
 | :------- | :--------- | :---------- | :-------------------------------------- |
-| Dhaen | Lander | TIN-2C2     | [LanderDhaen](https://github.com/LanderDhaen) |
-| Karknawi | Sammy | TIN-2C2     | [SKHogent](https://github.com/SKHogent) |
 | Nicolas | Robinet | TIN-2A2     | [Nicolas-Robinet](https://github.com/Nicolas-Robinet) |
 | Schouteeten | Tatjana | TIN-2A2    | [TatjanaSchouteeten](https://github.com/TatjanaSchouteeten) |
 
